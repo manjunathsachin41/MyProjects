@@ -5,10 +5,40 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
                                    http://www.springframework.org/schema/beans/spring-beans.xsd">
 	<!-- No Constructor -->
-	 <bean id="dukeOne" class="com.example.SpringBean.Juggler"/>
-	 
-	 <!-- Use Constructor to set value to bean -->
-	 <bean id="dukeMany" class="com.example.SpringBean.Juggler">
-	 	<constructor-arg value = "15"/>
-	 </bean> 
+	<bean id="dukeOne" class="com.example.constructor.Juggler" />
+
+	<!-- Use Constructor to set value to bean -->
+	<bean id="dukeMany" class="com.example.constructor.Juggler">
+		<constructor-arg value="15" />
+	</bean>
+
+	<!-- Use Constructor to set value to bean -->
+	<bean id="poeticJuggler"
+		class="com.example.constructor.PoeticJuggler">
+		<constructor-arg value="15" />
+		<constructor-arg ref="sonnetSong" />
+	</bean>
+
+	<bean id="sonnetSong" class="com.example.constructor.SonnetSong" />
+
+
+	<!-- ============================================================================= -->
+
+	<!-- Use Setter to set value to bean -->
+	<bean id="instrumentalistForSaxophone"
+		class="com.example.propertySetter.Instrumentalist">
+		<property name="song" value="Jingle Bell" />
+		<property name="instrument" ref="saxophone" />
+	</bean>
+
+	<bean id="saxophone" class="com.example.propertySetter.Saxophone" />
+	
+		<bean id="instrumentalistForPiano"
+		class="com.example.propertySetter.Instrumentalist">
+		<property name="song" value="Twinkle Twinkle" />
+		<property name="instrument" ref="piano" />
+	</bean>
+
+	<bean id="piano" class="com.example.propertySetter.Piano" />
+
 </beans>

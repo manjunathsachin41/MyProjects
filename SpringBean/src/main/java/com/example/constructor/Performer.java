@@ -1,4 +1,4 @@
-package com.example.SpringBean;
+package com.example.constructor;
 
 public interface Performer {
 	
