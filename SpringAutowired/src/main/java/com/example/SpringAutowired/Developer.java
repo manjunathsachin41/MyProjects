@@ -14,6 +14,7 @@ public class Developer {
 	// Construction Injection
 	//@Autowired
 	//  Developer(Computer computer) { 
+	// System.out.println("Inside Constructor");
 	  //	this.computer = computer; 
 	  //}
 	  
@@ -24,6 +25,7 @@ public class Developer {
 	  @Autowired
 	  @Qualifier("laptop")
 	  public void setComputer(Computer computer) { 
+		  System.out.println("Inside Setter");
 		  this.computer = computer; 
 	  }
 	 
