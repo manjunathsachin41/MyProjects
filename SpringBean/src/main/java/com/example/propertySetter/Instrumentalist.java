@@ -13,6 +13,7 @@ public class Instrumentalist implements Performer {
 	}
 
 	public void setSong(String song) {
+		System.out.println("Setting Song: "+song);
 		this.song = song;
 	}
 
@@ -21,6 +22,7 @@ public class Instrumentalist implements Performer {
 	}
 
 	public void setInstrument(Instrument instrument) {
+		System.out.println("Setting Instrument: "+instrument);
 		this.instrument = instrument;
 	}
 

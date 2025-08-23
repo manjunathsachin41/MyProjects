@@ -32,8 +32,8 @@
 	</bean>
 
 	<bean id="saxophone" class="com.example.propertySetter.Saxophone" />
-	
-		<bean id="instrumentalistForPiano"
+
+	<bean id="instrumentalistForPiano"
 		class="com.example.propertySetter.Instrumentalist">
 		<property name="song" value="Twinkle Twinkle" />
 		<property name="instrument" ref="piano" />
