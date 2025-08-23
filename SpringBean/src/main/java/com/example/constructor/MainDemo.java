@@ -24,5 +24,8 @@ public class MainDemo {
 		Performer pianoPerformer = (Performer) ctx.getBean("instrumentalistForPiano");
 		pianoPerformer.perform();
 		
+		Performer saxaphoneAutowire = (Performer) ctx.getBean("instrumentalistForAutowire");
+		saxaphoneAutowire.perform();
+		
 	}
 }

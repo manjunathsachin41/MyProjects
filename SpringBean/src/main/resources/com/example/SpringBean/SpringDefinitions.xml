@@ -40,5 +40,16 @@
 	</bean>
 
 	<bean id="piano" class="com.example.propertySetter.Piano" />
+	
+		<!-- ============================================================================= -->
+
+	<!-- Use Autowire byType -->
+	<bean id="instrumentalistForAutowire"
+		class="com.example.propertySetter.Instrumentalist" autowire="byType">
+		<property name="song" value="Baa Baa Black Sheep" />
+		<!-- Saxophone is Autowired byType and it is Primary over Piano -->
+	</bean>
+	
+	<bean id="saxophoneFirst" class="com.example.propertySetter.Saxophone" primary="true" />
 
 </beans>
