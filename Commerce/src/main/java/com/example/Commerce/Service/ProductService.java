@@ -8,27 +8,49 @@ import org.springframework.stereotype.Service;
 import com.example.Commerce.Model.Product;
 import com.example.Commerce.Model.ProductRepo;
 
+
+/**
+ * Service class for managing Product entities.
+ * Provides methods to add, delete, and retrieve products using ProductRepo.
+ */
 @Service
 public class ProductService {
 
 	@Autowired
 	ProductRepo productRepo;
 
-	public void addProduct(Product prod) {
-		productRepo.save(prod);
+	/**
+     * Adds a new product to the repository.
+     * @param prod the Product to add
+     */
+    public void addProduct(Product prod) {
+		productRepo.save(prod);	
 		// No need to write queries, spring data jpa automatically takes care.
-	}
+	 }
 
-	public void deleteProduct(int prodId) {
+    /**
+     * Deletes a product by its ID.
+     * @param prodId the ID of the product to delete
+     */
+    public void deleteProduct(int prodId) { 
 		productRepo.deleteById(prodId);
-
 	}
 
-	public List<Product> getAllProducts() {
-		return productRepo.findAll();
+    /**
+     * Retrieves all products from the repository.
+     * @return a list of all products
+     */
+    public List<Product> getAllProducts() { 
+		List<Product> products = productRepo.findAll();
+		return products;
 	}
 
-	public Product getAllProductById(int prodId) {
+    /**
+     * Retrieves a product by its ID.
+     * @param prodId the ID of the product
+     * @return the Product if found, otherwise a new Product instance
+     */
+    public Product getAllProductById(int prodId) { 
 		return productRepo.findById(prodId).orElse(new Product());
 	}
 
