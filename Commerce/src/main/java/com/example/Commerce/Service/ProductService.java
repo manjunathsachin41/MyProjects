@@ -16,7 +16,7 @@ public class ProductService {
 
 	public void addProduct(Product prod) {
 		productRepo.save(prod);
-		// No need to write queries, spring boot automatically takes care.
+		// No need to write queries, spring data jpa automatically takes care.
 	}
 
 	public void deleteProduct(int prodId) {
