@@ -6,12 +6,14 @@ import java.util.Set;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.Commerce.Model.Address;
 import com.example.Commerce.Model.Customer;
+import com.example.Commerce.Model.Order;
 import com.example.Commerce.Model.Product;
 import com.example.Commerce.Model.ProductCategory;
 import com.example.Commerce.Service.CustomerService;
@@ -29,9 +31,14 @@ public class CommerceController {
 	@Autowired
 	ProductCategoryService productCategoryService;
 	
-	@PostMapping("/customer")
-	public void registerCustomer() {
-		logger.info("Registration of Customer and Address Started ");
+	@GetMapping("/find")
+	public void findCustomer() {
+		customerService.findCustomer();
+	}
+	
+	@PostMapping("/placeorder")
+	public void placeOrders() {
+		logger.info("Place Orders ");
 		Customer customer = new Customer();
 		Address firstAddress =new Address();
 		Address secondAddress =new Address();
@@ -42,8 +49,8 @@ public class CommerceController {
 		addressSet.add(firstAddress);
 		addressSet.add(secondAddress);
 		customer.setAddresses(addressSet);
-		
-		customerService.registerCustomer(customer);
+		addOrders(customer);
+		customerService.placeOrders(customer);
 	}
 
 	@PostMapping("/addproducts")
@@ -75,10 +82,31 @@ public class CommerceController {
 		
 	}
 	
+	private void addOrders(Customer customer) {
+		Order firstOrder=new Order();
+		firstOrder.setOrderId(500);
+		firstOrder.setOrderAmount(250000);
+		firstOrder.setOrderDate(new java.util.Date());
+		firstOrder.setCustomer(customer);
+		
+		Order secondOrder=new Order();
+		secondOrder.setOrderId(501);
+		secondOrder.setOrderAmount(350000);
+		secondOrder.setOrderDate(new java.util.Date());
+		secondOrder.setCustomer(customer);
+		
+        Set<Order> orders = new HashSet<Order>();
+        orders.add(firstOrder);
+        orders.add(secondOrder);
+        
+        customer.setOrders(orders);
+        
+	}
+
 	private void addSecondAddress(Customer customer, Address secondAddress) {
 		secondAddress.setAddressId(201);
-		secondAddress.setCity("Pune");
-		secondAddress.setState("Maharashtra");
+		secondAddress.setCity("Bengaluru");
+		secondAddress.setState("Karnataka");
 		secondAddress.setCountry("India");
 		secondAddress.setPinCode(40002);
 		secondAddress.setCustomer(customer);
@@ -86,8 +114,8 @@ public class CommerceController {
 
 	private void addFirstAddress(Customer customer, Address firstAddress) {
 		firstAddress.setAddressId(200);
-		firstAddress.setCity("Mumbai");
-		firstAddress.setState("Maharashtra");
+		firstAddress.setCity("Tumkuru");
+		firstAddress.setState("Karnataka");
 		firstAddress.setCountry("India");
 		firstAddress.setPinCode(40001);
 		firstAddress.setCustomer(customer);

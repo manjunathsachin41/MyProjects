@@ -16,8 +16,13 @@ public class CustomerService {
 
 	private static final Logger logger = LoggerFactory.getLogger(CustomerService.class);
 
-	public void registerCustomer(Customer cust) {
+	public void placeOrders(Customer cust) {
 		customerRepo.save(cust);
-		logger.info("Customer and Address Registered Successfully");
+		logger.info("Order Placed Successfully");
+	}
+
+	public void findCustomer() {
+		Customer cust=	customerRepo.findCustomerByEmail("sachin@gmail.com");
+		logger.info(cust.getCustomerName()+": "+ cust.getPhone());
 	}
 }

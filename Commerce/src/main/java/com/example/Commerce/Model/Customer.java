@@ -1,10 +1,7 @@
 package com.example.Commerce.Model;
 
-import java.util.HashSet;
 import java.util.Set;
-
 import org.springframework.stereotype.Component;
-
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -24,8 +21,11 @@ public class Customer {
 	private Integer phone;
 
 	@OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
-	private Set<Address> addresses = new HashSet<Address>();
+	private Set<Address> addresses ;
 
+	@OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
+	private Set<Order> orders;
+	
 	public Customer() {
 	}
 
@@ -76,6 +76,14 @@ public class Customer {
 
 	public void setAddresses(Set<Address> addresses) {
 		this.addresses = addresses;
+	}
+
+	public Set<Order> getOrders() {
+		return orders;
+	}
+
+	public void setOrders(Set<Order> orders) {
+		this.orders = orders;
 	}
 
 }

@@ -3,7 +3,7 @@ package com.example.Commerce.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-//@ It signifies this as bean + rest service
+//@ It signifies this as bean + rest web service
 @RestController
 public class HomeController {
 	
