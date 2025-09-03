@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.Commerce.Model.Product;
-import com.example.Commerce.Model.ProductRepo;
+import com.example.Commerce.Repo.ProductRepo;
 
 
 /**

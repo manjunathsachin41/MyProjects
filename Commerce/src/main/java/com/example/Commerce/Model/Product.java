@@ -1,32 +1,29 @@
 package com.example.Commerce.Model;
 
-import java.util.Date;
-
 import org.springframework.stereotype.Component;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 
 @Component
 @Entity
 public class Product {
-	
+
 	@Id
 	private int productID;
-	
+
 	private String productName;
-	
+
 	private int productPrice;
-	
-	private String brand;
-	
-	private String category;
-	
-	private Date releaseDate;
-	
-	private boolean availability;
-	
-	private int quantity;
+
+	@ManyToOne
+	@JoinColumn(name = "categoryId", referencedColumnName="categoryId")
+	private ProductCategory category;
+
+	public Product() {
+	}
 
 	public int getProductID() {
 		return productID;
@@ -52,56 +49,18 @@ public class Product {
 		this.productPrice = productPrice;
 	}
 
-	public String getBrand() {
-		return brand;
-	}
-
-	public void setBrand(String brand) {
-		this.brand = brand;
-	}
-
-	public String getCategory() {
+	public ProductCategory getCategory() {
 		return category;
 	}
 
-	public void setCategory(String category) {
+	public void setCategory(ProductCategory category) {
 		this.category = category;
 	}
 
-	public Date getReleaseDate() {
-		return releaseDate;
-	}
 
-	public void setReleaseDate(Date releaseDate) {
-		this.releaseDate = releaseDate;
-	}
-
-	public boolean isAvailability() {
-		return availability;
-	}
-
-	public void setAvailability(boolean availability) {
-		this.availability = availability;
-	}
-
-	public int getQuantity() {
-		return quantity;
-	}
-
-	public void setQuantity(int quantity) {
-		this.quantity = quantity;
-	}
-	
-	
-	
-	
 	/*
-	 {
-    "productID": 101,
-    "productName": "Laptop",
-    "productPrice": 50000
-}
-	
+	 * { "productID": 101, "productName": "Laptop", "productPrice": 50000 }
+	 * 
 	 */
 
 }

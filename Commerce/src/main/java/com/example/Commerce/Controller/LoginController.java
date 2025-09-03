@@ -24,12 +24,11 @@ public class LoginController {
 		return "Logged in Succesfully to " + customAppName;
 	}
 
-	// http://localhost:8080/login?username=admin&pwd=admin123 
+	// http://localhost:8080/login?username=admin&pwd=admin123
 	@GetMapping("/login")
 	public String loginWithValue(@RequestParam("username") String user, @RequestParam("pwd") String pwd) {
 		String message = "Username: " + user + " Password: " + pwd + " logged in Succesfully";
 		LOGGER.info(message);
 		return message;
 	}
-
 }
