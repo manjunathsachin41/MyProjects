@@ -20,9 +20,11 @@ public class Customer {
 
 	private Integer phone;
 
+	//Just a reference for customer, non owning entity. Address is the actual owner of this relationship.
 	@OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
 	private Set<Address> addresses ;
 
+	//Just a reference for customer, non owning entity. Order is the actual owner of this relationship.
 	@OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
 	private Set<Order> orders;
 	
@@ -85,5 +87,44 @@ public class Customer {
 	public void setOrders(Set<Order> orders) {
 		this.orders = orders;
 	}
+	
+	  public static Builder builder() {
+	        return new Builder();
+	    }
 
+	
+	public static class Builder {
+        private final Customer customer;
+
+        private Builder() {
+            customer = new Customer();
+        }
+
+        public Builder id(Integer id) {
+            customer.customerId = id;
+            return this;
+        }
+
+        public Builder custName(String custName) {
+            customer.customerName = custName;
+            return this;
+        }
+
+        public Builder email(String email) {
+            customer.email = email;
+            return this;
+        }
+
+        public Builder phNumber(Integer phNumber) {
+            customer.phone = phNumber;
+            return this;
+        }
+
+
+        public Customer build() {
+            return customer;
+        }
+    }
+	
+	
 }

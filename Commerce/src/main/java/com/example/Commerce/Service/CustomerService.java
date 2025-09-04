@@ -21,8 +21,10 @@ public class CustomerService {
 		logger.info("Order Placed Successfully");
 	}
 
+	//JPA writes query by itself
 	public void findCustomer() {
 		Customer cust=	customerRepo.findCustomerByEmail("sachin@gmail.com");
 		logger.info(cust.getCustomerName()+": "+ cust.getPhone());
 	}
+
 }
