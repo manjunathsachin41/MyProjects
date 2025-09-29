@@ -1,0 +1,10 @@
+In a one-to-many relationship, "one" side will always be parent entity and "many" side will be child entity.
+
+In a one-to-many relationship, Foreign key will move towards "many" side only and that side becomes owning entity.
+The other side becomes non owning entity.
+
+The entity providing the primary key is the parent entity.
+
+Owning/Non Owning is different from Parent/Child. 
+
+Use parent repo to do CRUD operations. 

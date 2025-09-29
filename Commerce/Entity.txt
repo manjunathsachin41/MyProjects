@@ -1,0 +1,50 @@
+Customer
+	cust_Id(primary key)
+	name
+	email
+	
+
+Address
+	address_Id(primary key)
+	city
+	state
+	country
+	cust_Id(Foreign key)
+	
+Order
+	order_Id(primary key)
+	order_date
+	order_amount
+	cust_Id(Foreign key)
+	
+Product
+	product_Id(primary key)
+	name
+	price
+	description
+	order_Id(Foreign key)
+	category_Id(Foreign key)
+	
+Product Category
+	category_Id(primary key)
+	name
+	
+Cart
+	cart_Id(primary key)
+	cust_Id(Foreign key)
+	
+Product_Cart
+	product_Id(primary key)
+	cart_Id(primary key)
+	
+Tracking Deatil
+	tracking_Id(primary key)
+	status
+	order_Id(Foreign key)
+	
+Payment
+	payment_Id(primary key)
+	method
+	amount
+	status
+	cust_Id(Foreign key)

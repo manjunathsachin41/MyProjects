@@ -1,0 +1,43 @@
+Exception is an unexpected event that disrupts the normal execution of the program
+https://media.geeksforgeeks.org/wp-content/uploads/20240730174225/Exceptions-in-Java-1-768.webp
+
+Types of exception
+1. Userdefined Exception - users can also create exceptions
+2. Build in Exception
+	2a. Checked Exception - Compiler forces the programmer to handle it. these exceptions are checked at compile-time by the compiler
+		Ex: IOException, FileNotFoundException, InterruptedException.
+		IOException extends Exception
+	2b. Unchecked Exception - The compiler will not check these exceptions at compile time
+		Ex: NullPointerException, ArithmeticException, ArrayIndexOutOfBoundException
+		NullPointerException extends RuntimeException
+		
+https://media.geeksforgeeks.org/wp-content/uploads/20240402093857/Exception-Handling-768.png
+
+Finally block
+	The finally block is used to execute important code regardless of whether an exception occurs or not.		
+	
+	
+How Programmer Handle an Exception?
+Java exception handling uses five keywords such as try, catch, throw and throws and finally.
+
+Code that might cause an exception goes in the try block.
+If an exception occurs, it is caught using catch.
+We can throw exceptions manually with throw and methods must declare exceptions they can throw using throws.
+The finally block is used for code that must run after try, whether an exception occurs or not.
+
+Error.
+An Error indicates a serious problem that a reasonable application should not try to catch.
+This is caused by issues with the JVM or hardware.
+Examples: OutOfMemoryError, StackOverFlowError
+
+class MyCustomCheckedException extends Exception{
+    public MyCustomException(String m) {
+        super(m);  
+    }
+}
+
+class MyCustomUnCheckedException extends RuntimeException{
+    public MyCustomException(String m) {
+        super(m);  
+    }
+}
