@@ -31,7 +31,7 @@ public class StringDemo {
 	}
 
 	void demoStringBuilder() {
-
+		System.out.println("======String Builder Demo============");
 		StringBuilder sb = new StringBuilder("Hello");
 		System.out.println("Initial StringBuilder: " + sb);
 		//capacity = 16 + length of string

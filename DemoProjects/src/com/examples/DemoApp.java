@@ -13,5 +13,6 @@ public class DemoApp {
 		cd.arrayList();
 		cd.setDemo();
 		cd.hashMapDemo();
+		
 	}
 }

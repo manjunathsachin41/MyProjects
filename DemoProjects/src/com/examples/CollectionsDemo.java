@@ -6,11 +6,13 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.Set;
 
 public class CollectionsDemo {
 
 	void arrayList() {
+
 		System.out.println("========= ArrayList Demo ===========");
 		List<String> serverList = new ArrayList<>();
 		serverList.add("Java");
@@ -41,16 +43,32 @@ public class CollectionsDemo {
 
 		fullList.remove("Hibernate");
 		fullList.remove(0);
-		System.out.println("After removing elements:");
-		Iterator<String> it = fullList.iterator();
+		List<String> reversedList = fullList.reversed();
+		System.out.println("After removing elements and reversing list:");
+		Iterator<String> it = reversedList.iterator();
 		while (it.hasNext()) {
 			String subject = it.next();
 			System.out.println(subject);
 		}
+		
+		demoStreams(fullList);
 
 	}
 
+	private void demoStreams(List<String> fullList) {
+		System.out.println("======Stream Demo============");
+		fullList.stream()
+		.filter(Objects::nonNull)
+		.filter(s -> !s.isEmpty())
+        .filter(subject -> subject.startsWith("J"))
+        .map(String::toUpperCase)
+        .distinct()
+        .sorted()
+        .forEach(System.out::println);
+	}
+
 	void setDemo() {
+
 		System.out.println("========= Set Demo ===========");
 		Set<String> serverSet = new HashSet<>();
 		serverSet.add("Java");
@@ -68,12 +86,12 @@ public class CollectionsDemo {
 	}
 
 	void hashMapDemo() {
+
 		System.out.println("========= HashMap Demo ===========");
 		Map<Integer, String> map = new HashMap<>();
 		map.put(1, "One");
 		map.put(2, "Two");
 		map.put(3, "Three");
-		
 
 		// map.keySet().forEach(key -> System.out.println("Key: " + key + ", Value: " +
 		// map.get(key)));
@@ -82,8 +100,8 @@ public class CollectionsDemo {
 		for (Integer key : onlyKeys) {
 			System.out.println("Key: " + key);
 		}
-		
-		if(map.containsKey(3)) {
+
+		if (map.containsKey(3)) {
 			map.put(3, "Three updated");
 		}
 

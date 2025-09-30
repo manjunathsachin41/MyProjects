@@ -1,3 +1,0 @@
-Mutable (modifiable)
-	StringBuffer  -> Thread safe but slower performance
-	StringBuilder  -> Not Thread safe hence faster performance

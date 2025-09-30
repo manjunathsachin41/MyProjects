@@ -1,0 +1,44 @@
+Mutable (modifiable)
+	StringBuffer  -> Thread safe but slower performance
+	StringBuilder  -> Not Thread safe hence faster performance
+	
+===============================================================================================
+Streams
+flatMap(List::stream): Flattens the nested lists(listOfList) into a single stream of strings.
+filter(s -> s.startsWith("S")): Filters the strings to only include those that start with "S".
+map(String::toUpperCase): Converts each string in the stream to uppercase.
+distinct(): Removes any duplicate strings.
+sorted(): Sorts the resulting strings alphabetically.
+peek(...): Adds each processed element to the intermediateResults set for intermediate inspection.
+collect(Collectors.toList()): Collects the final processed strings into a list called result.
+forEach: Prints each name in the list.
+collect: Filters names starting with 'S' and collects them into a new list.
+reduce: Concatenates all names into a single string.
+count: Counts the total number of names.
+findFirst: Finds and prints the first name in the list.
+allMatch: Checks if all names start with 'S'.
+anyMatch: Checks if any name starts with 'S'.
+
+peek vs map
+peek performs operations on stream elements but doesn't alter the stream's data. 
+map transforms elements and returns the modified data to the stream.
+
+================================================================================================
+
+Encapsulation: 
+1. Bundling of Data and Methods: Encapsulation involves combining the attributes (variables) and behaviors (methods) 
+related to a specific entity within a single class.
+
+2. Data Hiding, by using private access specifier.
+
+3. Controlled Access via Getters and Setters.
+
+Inheritance
+1. To inherit properties (fields) and behaviors (methods) from another class. 
+It establishes an "IS-A" relationship between classes, such as a "Dog IS-A Animal."  
+
+2. Multiple Inheritance: A class inheriting from multiple parent classes doesnt happen.
+
+Polymorphism
+1. Static Polymorphism or Method Overloading.
+2. Dynamic Polymorphism or Method Overriding.
