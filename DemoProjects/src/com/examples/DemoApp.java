@@ -8,6 +8,8 @@ public class DemoApp {
 		st.stackHeapMemory();
 		st.compareString();
 		st.demoStringBuilder();
+		st.stringRegularExpression();
+		st.reverseString();
 		
 		CollectionsDemo cd = new CollectionsDemo();
 		cd.arrayList();

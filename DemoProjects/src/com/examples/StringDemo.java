@@ -1,5 +1,8 @@
 package com.examples;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class StringDemo {
 
 	void compareString() {
@@ -66,6 +69,36 @@ public class StringDemo {
 		// 7. Converting StringBuilder to String
 		String finalString = sb.toString();
 		System.out.println("Final String: " + finalString);
+	}
+	
+	void stringRegularExpression() {
+		
+		System.out.println("======String RegularExps Demo============");
+		
+		String s = "This is,comma.fullstop  whitespace";
+
+		// The regex [,\\s\\.] splits the string by
+		// commas (,), spaces (\\s), and periods (\\.)
+		String regex = "[,\\s\\.]";
+
+		// using split() method
+		String[] arr = s.split(regex);
+		List<String> list=Arrays.asList(arr);
+		
+		// Print each element of the resulting array
+		list.forEach(System.out::println);
+	}
+	
+	void reverseString() {
+		
+		System.out.println("======Reverse String Demo============");
+		String original = "This is,comma.fullstop  whitespace";
+        String reversed = "";
+
+        for (int i = original.length() - 1; i >= 0; i--) {
+            reversed = reversed + original.charAt(i);
+        }
+        System.out.println("Reversed String: " + reversed);
 	}
 
 }
