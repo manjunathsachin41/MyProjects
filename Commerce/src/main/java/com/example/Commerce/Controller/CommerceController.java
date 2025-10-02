@@ -89,6 +89,15 @@ public class CommerceController {
 		firstOrder.setOrderDate(new java.util.Date());
 		firstOrder.setCustomer(customer);
 		
+		Set<Product> productSet = new HashSet<Product>();
+		Product firstProduct = new Product();
+		firstProduct.setProductID(300);
+		firstProduct.setProductName("iPhone 14 Pro");
+		firstProduct.setProductPrice(130000);
+		firstProduct.setOrder(firstOrder);
+		productSet.add(firstProduct);
+		firstOrder.setProducts(productSet);		
+		
 		Order secondOrder=new Order();
 		secondOrder.setOrderId(501);
 		secondOrder.setOrderAmount(350000);

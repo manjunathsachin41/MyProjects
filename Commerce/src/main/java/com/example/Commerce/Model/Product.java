@@ -21,6 +21,10 @@ public class Product {
 	@ManyToOne
 	@JoinColumn(name = "categoryId", referencedColumnName="categoryId")
 	private ProductCategory category;
+	
+	@ManyToOne
+	@JoinColumn(name = "orderId", referencedColumnName="orderId")
+	private Order order;
 
 	public Product() {
 	}
@@ -55,6 +59,14 @@ public class Product {
 
 	public void setCategory(ProductCategory category) {
 		this.category = category;
+	}
+
+	public Order getOrder() {
+		return order;
+	}
+
+	public void setOrder(Order order) {
+		this.order = order;
 	}
 
 

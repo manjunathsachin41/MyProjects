@@ -83,7 +83,7 @@ public class StringDemo {
 
 		// using split() method
 		String[] arr = s.split(regex);
-		List<String> list=Arrays.asList(arr);
+		List<String> list = Arrays.asList(arr);
 		
 		// Print each element of the resulting array
 		list.forEach(System.out::println);
