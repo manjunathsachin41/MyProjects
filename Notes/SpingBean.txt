@@ -1,0 +1,13 @@
+
+============================================================================================================
+When multiple beans of the same type Shape exist, you can use @Qualifier to specify name of bean to inject.
+
+@Autowired
+@Qualifier("circleshape") 
+Shape shape;
+
+Shape -> interface
+CircleShape -> Class
+RectangleShape -> Class
+
+=============================================================================================================

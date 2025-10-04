@@ -6,7 +6,6 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 import java.util.Set;
 
 public class CollectionsDemo {
@@ -51,21 +50,9 @@ public class CollectionsDemo {
 			System.out.println(subject);
 		}
 		
-		demoStreams(fullList);
-
 	}
 
-	private void demoStreams(List<String> fullList) {
-		System.out.println("======Stream Demo============");
-		fullList.stream()
-		.filter(Objects::nonNull)
-		.filter(s -> !s.isEmpty())
-        .filter(subject -> subject.startsWith("J"))
-        .map(String::toUpperCase)
-        .distinct()
-        .sorted()
-        .forEach(System.out::println);
-	}
+
 
 	void setDemo() {
 
@@ -116,5 +103,6 @@ public class CollectionsDemo {
 			System.out.println(key + ": " + value);
 		}
 	}
+	
 
 }

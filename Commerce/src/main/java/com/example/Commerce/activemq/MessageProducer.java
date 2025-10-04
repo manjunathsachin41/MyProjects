@@ -6,6 +6,7 @@ import org.springframework.jms.core.JmsTemplate;
 import org.springframework.stereotype.Component;
 
 @Component
+//@Component("producer")  Explicitly name the bean
 public class MessageProducer {
 
     @Autowired

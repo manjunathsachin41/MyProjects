@@ -1,6 +1,7 @@
 JMS-Java Messaging Service
 JMS is a Java API specification that defines a standard way for Java applications to create, send, receive, and read messages.
 JMS is an API, not an implementation
+
 Messaging Paradigms: 
 JMS supports two primary messaging paradigms:
 Point-to-Point (Queues): Messages are sent to a specific queue and consumed by only one consumer.

@@ -1,0 +1,6 @@
+
+GenerationType.
+- AUTO: Lets the persistence provider choose the generation strategy.
+- IDENTITY: Relies on the database’s identity column for primary key generation.
+- SEQUENCE: Uses a database sequence to generate primary keys.
+- TABLE: Uses a dedicated database table to generate primary keys.
