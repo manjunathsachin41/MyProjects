@@ -1,5 +1,7 @@
 package com.examples;
 
+import com.examples.comparable.ComparableDemo;
+import com.examples.comparator.ComparatorDemo;
 import com.examples.exceptions.InvalidAgeException;
 import com.examples.exceptions.NameNotFoundException;
 import com.examples.exceptions.VotingEligibilityChecker;
@@ -25,6 +27,26 @@ public class DemoApp {
 		//Threads
 		threadDemo();
 		
+		//Comparable
+		comparableDemo();
+		
+		//Comparator
+		comparatorDemo();
+		
+	}
+
+	private static void comparatorDemo() {
+		System.out.println("========= Comparator Demo ===========");
+		ComparatorDemo cd = new ComparatorDemo();
+		cd.demoOne();
+		cd.demoTwo();
+	}
+
+	private static void comparableDemo() {
+		System.out.println("========= Comparable Demo ===========");
+		ComparableDemo cd = new ComparableDemo();
+		cd.demoOne();
+		cd.demoTwo();
 	}
 
 	private static void exceptionDemo() {
