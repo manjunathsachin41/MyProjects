@@ -3,6 +3,7 @@ package com.example.Commerce.Service;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
@@ -12,6 +13,7 @@ import com.example.Commerce.Model.Customer;
 import com.example.Commerce.Repo.CustomerRepo;
 
 @Service
+//@Scope("singleton") -> Only one instance of CustomerService will be created in container.
 public class CustomerService {
 
 	@Autowired

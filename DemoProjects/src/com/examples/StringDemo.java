@@ -84,9 +84,12 @@ public class StringDemo {
 		// using split() method
 		String[] arr = s.split(regex);
 		List<String> list = Arrays.asList(arr);
+	//	List<Character> exampleList = List.of('A', 'B', 'C');
 		
 		// Print each element of the resulting array
 		list.forEach(System.out::println);
+		// Both sysout are same
+		// list.forEach(name -> System.out.println(name)); --> Lamda expression
 	}
 	
 	void reverseString() {

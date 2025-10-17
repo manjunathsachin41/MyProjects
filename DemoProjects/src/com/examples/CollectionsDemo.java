@@ -4,14 +4,16 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Vector;
 
 public class CollectionsDemo {
 
 	void arrayList() {
-
+		// Its default size is 10, Addition happens by 5
 		System.out.println("========= ArrayList Demo ===========");
 		List<String> serverList = new ArrayList<>();
 		serverList.add("Java");
@@ -50,6 +52,23 @@ public class CollectionsDemo {
 			System.out.println(subject);
 		}
 		
+		linkedListAndVector();
+		
+	}
+	
+	public void linkedListAndVector() {
+		// It works similar to ArrayList but doubly linked list is used internally
+		LinkedList<String> linkedList = new LinkedList<>();
+		// add is generic.
+		linkedList.add("Node1");
+		// Stack-like insertion (LIFO)
+		linkedList.push("Push1");
+		
+		// works like an ArrayList, but it is synchronized
+		Vector<String> vectorList = new Vector<>();
+		vectorList.add("Vector1");
+		//addElement is legacy method and synchronized
+		vectorList.addElement("Vector2");
 	}
 
 

@@ -1,8 +1,8 @@
 package com.examples.interfaces;
 
-public interface Developer {
+public interface Computer {
 
-	static final String NAME = "MyInterface";
+	static final String NAME = "Computer";
 
 	void doCoding();
 
