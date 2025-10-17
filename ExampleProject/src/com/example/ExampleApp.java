@@ -5,6 +5,8 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
+import com.example.search.SearchTechnique;
+
 public class ExampleApp {
 
 	public static void main(String[] args) {
@@ -14,6 +16,15 @@ public class ExampleApp {
 		removeRepeatationsInString();
 		findRepetationsAndItsCount();
 		swapWordsInAStrings();
+		
+		searchOperations();
+	}
+
+	private static void searchOperations() {
+		SearchTechnique st = new SearchTechnique();
+		st.doLinearSearch();
+		st.binarySearch();
+		
 	}
 
 	private static void reverseString() {
@@ -127,6 +138,7 @@ public class ExampleApp {
 		for (String word : words) {
 			System.out.print(word + " ");
 		}
+		System.out.println();
 	}
 
 }
