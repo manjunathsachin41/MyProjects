@@ -5,6 +5,7 @@ import com.examples.comparator.ComparatorDemo;
 import com.examples.exceptions.InvalidAgeException;
 import com.examples.exceptions.NameNotFoundException;
 import com.examples.exceptions.VotingEligibilityChecker;
+import com.examples.stream.StreamDemo;
 import com.examples.thread.Counter;
 import com.examples.thread.CounterThread;
 

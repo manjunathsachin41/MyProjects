@@ -1,4 +1,4 @@
-package com.examples;
+package com.examples.stream;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,7 +6,7 @@ import java.util.Objects;
 
 public class StreamDemo {
 	
-	void streamsDemoOnNumbers(){
+	public void streamsDemoOnNumbers(){
 		
 		List<Integer> intList = List.of(12, 9, 64, 23);
 		
@@ -56,6 +56,7 @@ public class StreamDemo {
 		fullList.addAll(serverList);
 		fullList.add(null);
 		fullList.add(null);
+		
 		fullList.stream()
 		.filter(Objects::nonNull)
 		.filter(s -> !s.isEmpty())
