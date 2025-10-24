@@ -4,9 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class StreamDemo {
+public class BasicStreamDemo {
+
+	public static void main(String[] args) {
+		streamsDemoOnNumbers();
+		streamsDemoOnList();
+	}
 	
-	public void streamsDemoOnNumbers(){
+	public static void streamsDemoOnNumbers(){
 		
 		List<Integer> intList = List.of(12, 9, 64, 23);
 		
@@ -37,7 +42,7 @@ public class StreamDemo {
 		System.out.println("Product of all numbers: " + product);
 	}
 	
-	public void streamsDemoOnList() {
+	public static void streamsDemoOnList() {
 		System.out.println("======Stream Demo============");
 		List<String> serverList = new ArrayList<>();
 		serverList.add("Java");

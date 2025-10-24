@@ -5,7 +5,6 @@ import com.examples.comparator.ComparatorDemo;
 import com.examples.exceptions.InvalidAgeException;
 import com.examples.exceptions.NameNotFoundException;
 import com.examples.exceptions.VotingEligibilityChecker;
-import com.examples.stream.StreamDemo;
 import com.examples.thread.Counter;
 import com.examples.thread.CounterThread;
 
@@ -13,15 +12,6 @@ public class DemoApp {
 
 	public static void main(String args[]) throws InterruptedException {
 
-		//String
-		stringDemo();
-
-		//Collections
-		collectionsDemo();
-
-		//Steam
-		streamDemo();
-		
 		//Exceptions
 		exceptionDemo();
 		
@@ -65,13 +55,6 @@ public class DemoApp {
 		}
 	}
 
-	private static void streamDemo() {
-		StreamDemo streamDemo = new StreamDemo();
-		streamDemo.streamsDemoOnNumbers();
-		streamDemo.streamsDemoOnList();
-		
-	}
-
 	private static void threadDemo() throws InterruptedException {
 		System.out.println("======Thread Demo============");
 		Counter counter = new Counter();
@@ -86,19 +69,4 @@ public class DemoApp {
 	    thread2.join();
 	}
 
-	private static void collectionsDemo() {
-		CollectionsDemo cd = new CollectionsDemo();
-		cd.arrayList();
-		cd.setDemo();
-		cd.hashMapDemo();
-	}
-
-	private static void stringDemo() {
-		StringDemo st = new StringDemo();
-		st.stackHeapMemory();
-		st.compareString();
-		st.demoStringBuilder();
-		st.stringRegularExpression();
-		st.reverseString();
-	}
 }

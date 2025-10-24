@@ -1,4 +1,4 @@
-package com.examples;
+package com.examples.collections;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -11,8 +11,14 @@ import java.util.Set;
 import java.util.Vector;
 
 public class CollectionsDemo {
+	
+	public static void main(String[] args) {
+		arrayList();
+		setDemo();
+		hashMapDemo();
+	}
 
-	void arrayList() {
+	static void arrayList() {
 		// Its default size is 10, Addition happens by 5
 		System.out.println("========= ArrayList Demo ===========");
 		List<String> serverList = new ArrayList<>();
@@ -56,7 +62,7 @@ public class CollectionsDemo {
 		
 	}
 	
-	public void linkedListAndVector() {
+	public static void linkedListAndVector() {
 		// It works similar to ArrayList but doubly linked list is used internally
 		LinkedList<String> linkedList = new LinkedList<>();
 		// add is generic.
@@ -73,7 +79,7 @@ public class CollectionsDemo {
 
 
 
-	void setDemo() {
+	static void setDemo() {
 
 		System.out.println("========= Set Demo ===========");
 		Set<String> serverSet = new HashSet<>();
@@ -82,7 +88,7 @@ public class CollectionsDemo {
 		serverSet.add("Hibernate");
 		serverSet.add("Microservices");
 		serverSet.add("DevOps");
-		serverSet.add("Java"); // Duplicate will be ignored
+		serverSet.add("Java"); // Duplicate will be ignored and it returns false.
 		serverSet.add(null);
 		serverSet.add(null); // Duplicate null, will be ignored
 
@@ -91,8 +97,11 @@ public class CollectionsDemo {
 		}
 	}
 
-	void hashMapDemo() {
+	static void hashMapDemo() {
 
+		// Initial size of hashmap is 16
+		// Do not maintain insertion order.
+		// If we need order to be maintained for map, use LinkedHashmap
 		System.out.println("========= HashMap Demo ===========");
 		Map<Integer, String> map = new HashMap<>();
 		map.put(1, "One");
