@@ -1,13 +1,11 @@
-package com.example;
+package com.examples.string;
 
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-import com.example.search.SearchTechnique;
-
-public class ExampleApp {
+public class IntermediateStringDemo {
 
 	public static void main(String[] args) {
 		reverseString();
@@ -16,15 +14,7 @@ public class ExampleApp {
 		removeRepeatationsInString();
 		findRepetationsAndItsCount();
 		swapWordsInAStrings();
-		
-		searchOperations();
-	}
 
-	private static void searchOperations() {
-		SearchTechnique st = new SearchTechnique();
-		st.doLinearSearch();
-		st.binarySearch();
-		
 	}
 
 	private static void reverseString() {
@@ -119,8 +109,8 @@ public class ExampleApp {
 	}
 
 	private static void swapWordsInAStrings() {
-		 String inputString = "the sky is blue";
-		//String inputString = "a good   example";
+		String inputString = "the sky is blue";
+		// String inputString = "a good example";
 		// Replace more consecutive spaces with single space
 		String reducedString = inputString.replaceAll("\\s+", " ");
 		String[] words = reducedString.split(" ");

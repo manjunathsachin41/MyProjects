@@ -1,8 +1,15 @@
-package com.example.search;
+package com.examples.search;
+
 
 public class SearchTechnique {
+	
+	public static void main(String[] args) {
+		doLinearSearch();
+		binarySearch();
+		
+	}
 
-	public void doLinearSearch() {
+	public static void doLinearSearch() {
 		int[] input = { 93, 15, 36, 76, 84 };
 		int targetValue = 36;
 		for (int i = 0; i < input.length; i++) {
@@ -13,7 +20,7 @@ public class SearchTechnique {
 		}
 	}
 
-	public void binarySearch() {
+	public static void binarySearch() {
 		int[] input = { 15, 36, 76, 84, 93, 100 };
 		int targetValue = 84;
 		int start = 0;

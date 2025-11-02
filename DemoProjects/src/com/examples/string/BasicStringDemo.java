@@ -3,7 +3,7 @@ package com.examples.string;
 import java.util.Arrays;
 import java.util.List;
 
-public class StringDemo {
+public class BasicStringDemo {
 	
 	public static void main(String[] args) {
 		stackHeapMemory();
