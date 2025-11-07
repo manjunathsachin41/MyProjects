@@ -12,6 +12,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 
  */
 
+/*
+ * @FeignClient also helps in load balancing, If 2 instances of URLSHORTENING is running,
+ * based on number of request, the feignclient send request to different instances.
+ * we dont have to do anything.
+ */
+
 @FeignClient(name = "URLSHORTENING")
 public interface FeignShortenUrl {
 
