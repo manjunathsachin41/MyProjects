@@ -1,5 +1,6 @@
-package com.javatechie.config;
+package com.javatechie.service;
 
+import com.javatechie.config.CustomUserDetails;
 import com.javatechie.entity.UserCredential;
 import com.javatechie.repository.UserCredentialRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +17,10 @@ public class CustomUserDetailsService implements UserDetailsService {
     @Autowired
     private UserCredentialRepository repository;
 
+    /*
+     * This method is called by spring security autentication to check whether
+     * the particular user exists in our DB r not.
+     */
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         Optional<UserCredential> credential = repository.findByName(username);

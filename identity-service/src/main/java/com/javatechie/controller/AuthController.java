@@ -20,16 +20,23 @@ public class AuthController {
 
 	/*
 	 * { "name": "Manju", "email": "a", "password": "SanFrancisco" }
-	 * https://localhost:9898/auth/register
+	 * http://localhost:9898/auth/register
 	 */
 	@PostMapping("/register")
-	public String addNewUser(@RequestBody UserCredential user) {
+	public String signUp(@RequestBody UserCredential user) {
 		return service.saveUser(user);
 	}
-
+	
+	
+	/*
+	 * http://localhost:9898/auth/token
+	 * { "username": "Manju", "password": "man12" }
+	 */
 	@PostMapping("/token")
-	public String getToken(@RequestBody AuthRequest authRequest) {
-		// It automatically queries database and checks whether this user has entry in DB r not.
+	public String loginAndGetToken(@RequestBody AuthRequest authRequest) {
+		// The task of checking whether this user exist in our r not is delegated
+		//to authenticationManager.
+		// Only if user is prviously registered, it generate and provide token.
 		Authentication authenticate = authenticationManager.authenticate(
 				new UsernamePasswordAuthenticationToken(authRequest.getUsername(), authRequest.getPassword()));
 		if (authenticate.isAuthenticated()) {
