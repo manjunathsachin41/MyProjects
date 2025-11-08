@@ -12,6 +12,7 @@ import org.springframework.web.servlet.view.RedirectView;
 import com.example.urlshortening.service.UrlService;
 
 @RestController
+@RequestMapping("/url")
 public class UrlController {
 
 	private static final Logger logger = LoggerFactory.getLogger(UrlController.class);
@@ -39,5 +40,10 @@ public class UrlController {
 			// Handle not found case, e.g., redirect to an error page
 			return new RedirectView("/error");
 		}
+	}
+	
+	@GetMapping("/check")
+	public String check() {
+		return "Its Working";
 	}
 }
