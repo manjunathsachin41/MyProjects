@@ -1,0 +1,23 @@
+spring:
+ cloud:
+   gateway:
+     routes:
+       - id: urlshortening
+         uri: lb://URLSHORTENING
+         predicates:
+           - Path=/url/**
+         filters:
+           - AuthenticationFilter -> When request comes with pattern url/**, tansfer the request to URLSHORTENING service but
+           							before that goto AuthenticationFilter and verify token. 
+
+       - id: identity-service
+         uri: lb://IDENTITY-SERVICE
+         predicates:
+           - Path=/auth/**
+		   
+		   
+From Postman		   
+POST: http://localhost:8080/url/shorten?longUrl=manju
+In Authorization tab, provide Auth type: JWT Bearer, secret key and token in payload in json format like
+{"token":"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJNYW5qdSIsImlhdCI6MTc2MjYwMjYxNiwiZXhwIjoxNzYyNjA0NDE2fQ.fPfC9cGl1AABXwQU8Ug5VBt9fa-2S_2Ts6JEG3i0YJc"}
+

@@ -19,8 +19,8 @@ public class AuthController {
 	private AuthenticationManager authenticationManager;
 
 	/*
-	 * { "name": "Manju", "email": "a", "password": "SanFrancisco" }
-	 * http://localhost:9898/auth/register
+	 * { "name": "Manju", "email": "a@gmail.com", "password": "man12" }
+	 * http://localhost:8081/auth/register
 	 */
 	@PostMapping("/register")
 	public String signUp(@RequestBody UserCredential user) {
@@ -29,7 +29,7 @@ public class AuthController {
 	
 	
 	/*
-	 * http://localhost:9898/auth/token
+	 * http://localhost:8081/auth/token
 	 * { "username": "Manju", "password": "man12" }
 	 */
 	@PostMapping("/token")
