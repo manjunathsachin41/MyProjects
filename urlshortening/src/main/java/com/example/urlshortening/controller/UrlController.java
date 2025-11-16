@@ -41,9 +41,14 @@ public class UrlController {
 			return new RedirectView("/error");
 		}
 	}
-	
-	@GetMapping("/check")
-	public String check() {
-		return "Its Working";
+
+	@GetMapping("/checkRetry")
+	public String checkRetry() {
+		return "Retry is Working";
+	}
+
+	@GetMapping("/checkCircuit")
+	public ResponseEntity<String> checkCircuit(String name) {
+		return new ResponseEntity<String>("Welcome " + name, HttpStatus.OK);
 	}
 }
