@@ -1,4 +1,4 @@
-package com.examples.thread;
+package com.examples.basicThread;
 
 public class Counter {
 

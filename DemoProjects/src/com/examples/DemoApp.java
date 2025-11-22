@@ -1,12 +1,12 @@
 package com.examples;
 
+import com.examples.basicThread.Counter;
+import com.examples.basicThread.CounterThread;
 import com.examples.comparable.ComparableDemo;
 import com.examples.comparator.ComparatorDemo;
 import com.examples.exceptions.InvalidAgeException;
 import com.examples.exceptions.NameNotFoundException;
 import com.examples.exceptions.VotingEligibilityChecker;
-import com.examples.thread.Counter;
-import com.examples.thread.CounterThread;
 
 public class DemoApp {
 
