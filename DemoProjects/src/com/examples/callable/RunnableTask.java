@@ -1,6 +1,6 @@
 package com.examples.callable;
 
-public class RunnableThread implements Runnable {
+public class RunnableTask implements Runnable {
 
 	@Override
 	public void run() {
