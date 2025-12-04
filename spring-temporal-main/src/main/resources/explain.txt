@@ -1,0 +1,21 @@
+Temporal Server :
+It consists of independently scalable services: 
+Frontend gateway: for rate limiting, routing, authorizing. 
+History subsystem: maintains data (mutable state, queues, and timers).
+
+Temporal server-> Its an workflow orchestration engine designed to manage, execute, and monitor complex workflows.
+
+Once the client application submits the workflow execution to Temporal Server, it runs workflow in a distributed manner. 
+It handles all failure scenarios, such as retries, state management, deadlines, backpressure, etc. 
+Temporal Workers execute the workflow and Workflow steps (called Activities).
+
+Workflow -> A long-running process that orchestrates a series of activities.
+
+Activities -> Its the individual units of work in your Workflow. Activities are defined as either functions or methods, 
+depending on the programming language.
+
+Temporal Worker -> A Worker Process is responsible for polling a Task Queue, dequeueing a Task, executing Workflows and Activities.
+
+WorkflowClient -> It enables the initiation of new workflow executions, sending signals to running workflows, and querying their current state.
+
+WorkflowServiceStubs -> It establishs communication between your Spring Boot application (acting as a Temporal client) and the Temporal server.
