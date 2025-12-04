@@ -1,0 +1,5 @@
+1. Sealed Classes and Interfaces.
+2. Pattern Matching for Switch.
+3. Record Classes.
+	-To declare immutable data classes.
+	-Significantly reducing boilerplate code.
