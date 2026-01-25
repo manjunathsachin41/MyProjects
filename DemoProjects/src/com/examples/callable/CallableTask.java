@@ -6,7 +6,7 @@ public class CallableTask implements Callable<Integer> {
 
 	@Override
 	public Integer call() throws Exception {
-		System.out.println(" CallableTask is done here and it returns value!!!!!");
+		System.out.println(" Callable returns value and throw exception!!!!!");
 		int sum = 10 + 20;
 		return sum;
 	}

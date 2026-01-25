@@ -1,0 +1,35 @@
+class ParkingLot{
+	int parkingLotId;
+	List<ParkingLevel> levels;
+	
+	void parkVehicle(Vehicle v, ParkingLevel pl)
+	void removeVehicle(Vehicle)
+
+}
+
+class ParkingLevel{
+	int levelId;
+	List<ParkingSpot> spots;
+}
+
+class ParkingSpot{
+	int spotId;
+	Vehicle vehicle;
+	VehicleSize size;
+}
+
+class abstract Vehicle{
+	
+}
+
+class Car extends Vehicle{
+
+}
+
+class Bike extends Vehicle{
+
+}
+
+class Bus extends Vehicle{
+
+}

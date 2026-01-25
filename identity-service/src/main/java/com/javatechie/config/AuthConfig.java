@@ -30,6 +30,7 @@ public class AuthConfig {
         return http.csrf().disable()
                 .authorizeHttpRequests()
                 .requestMatchers("/auth/register", "/auth/token", "/auth/validate").permitAll()
+                // If url is of above type, u permit all
                 .and()
                 .build();
     }
