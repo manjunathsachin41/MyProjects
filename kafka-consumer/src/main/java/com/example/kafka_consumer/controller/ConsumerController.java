@@ -6,14 +6,14 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import com.example.kafka_consumer.service.ConsumerService;
+import com.example.kafka_consumer.service.MessageConsumerService;
 
 @RestController
 @RequestMapping("/kafka")
 public class ConsumerController {
 	
 	@Autowired
-	ConsumerService consumerService;
+	MessageConsumerService consumerService;
 	
 	private String response;
 	

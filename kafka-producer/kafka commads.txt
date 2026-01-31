@@ -1,14 +1,14 @@
 Open new cmd 
 Start Zookeeper
-C:\kafka_2.13-3.9.0\bin\windows>zookeeper-server-start zookeeper.properties
+C:\kafka_2.13-3.9.0\bin\windows>zookeeper-server-start.bat zookeeper.properties
 
 Open new cmd 
 Start broker_0
-C:\kafka_2.13-3.9.0\bin\windows>kafka-server-start server_0.properties
+C:\kafka_2.13-3.9.0\bin\windows>kafka-server-start.bat server_0.properties
 
 Open new cmd 
 Start broker_1
-C:\kafka_2.13-3.9.0\bin\windows>kafka-server-start server_1.properties
+C:\kafka_2.13-3.9.0\bin\windows>kafka-server-start.bat server_1.properties
 
 Open new cmd 
 Create topic::
@@ -16,3 +16,6 @@ C:\kafka_2.13-3.9.0\bin\windows> kafka-topics.bat --create --topic telusko --boo
 
 To list topics and partitions
 C:\kafka_2.13-3.9.0\bin\windows> kafka-topics.bat --describe --topic telusko --bootstrap-server localhost:9092
+
+Delete topic::
+C:\kafka_2.13-3.9.0\bin\windows> kafka-topics.bat --bootstrap-server localhost:9092 --delete --topic telusko
