@@ -27,6 +27,7 @@ public class AuthenticationFilter extends AbstractGatewayFilterFactory<Authentic
 	@Override
 	public GatewayFilter apply(Config config) {
 		return ((exchange, chain) -> {
+			// exchange contains HttpRequest object.
 			if (validator.isSecured.test(exchange.getRequest())) {
 				// checking header contains token or not
 				if (!exchange.getRequest().getHeaders().containsKey(HttpHeaders.AUTHORIZATION)) {

@@ -42,13 +42,18 @@ public class UrlController {
 		}
 	}
 
+	@GetMapping("/checkCircuit")
+	public String checkCircuit() {
+		return "CircuitBreaker is Working";
+	}
+	
 	@GetMapping("/checkRetry")
 	public String checkRetry() {
 		return "Retry is Working";
 	}
-
-	@GetMapping("/checkCircuit")
-	public ResponseEntity<String> checkCircuit(String name) {
-		return new ResponseEntity<String>("Welcome " + name, HttpStatus.OK);
+	
+	@GetMapping("/checkRateLimiter")
+	public String checkRateLimiter() {
+		return "RateLimiter is Working";
 	}
 }

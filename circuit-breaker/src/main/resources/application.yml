@@ -13,8 +13,8 @@ management:
   retry:
     instances:
       testRetryService:
-        maxRetryAttempts: 5
-        waitDuration: 10s		  
+        maxRetryAttempts: 3  #The system will retry up to 3 times before failing.
+        waitDuration: 10s	 #The system will wait 10 seconds between each retry attempt.
 
 resilience4j:
   circuitbreaker:
@@ -22,9 +22,15 @@ resilience4j:
       testCircuitBreaker:
         registerHealthIndicator: true  # Expose circuit breaker health via the actuator
         slidingWindowSize: 10          # Size of the sliding window for call recording
-        slidingWindowType: COUNT_BASED # Use count-based sliding window
+        slidingWindowType: COUNT_BASED # Use count-based sliding window, other type is time based
         minimumNumberOfCalls: 2       # Minimum number of calls before calculating failure rate
         failureRateThreshold: 50       # If 50% (5 out of 10) calls fail, the circuit goes to OPEN state
-        waitDurationInOpenState: 1s   # Time the circuit stays OPEN before moving to HALF_OPEN
+        waitDurationInOpenState: 1s   # Time the circuit stays OPEN before moving to HALF_OPEN 
         permittedNumberOfCallsInHalfOpenState: 3  # Number of test calls in HALF_OPEN state
         eventConsumerBufferSize: 10    # Buffer size for event logs
+  ratelimiter:
+    instances:
+      testRateLimiter:
+        limitRefreshPeriod: 5s  # Limit reset every 5sec ie A new request will be allowed every 5sec.
+        limitForPeriod: 2       # Allows only 2 request every 5sec., if multiple request comes, it will be blocked.
+        timeoutDuration: 1s
